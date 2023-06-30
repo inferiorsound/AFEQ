@@ -1,0 +1,6 @@
+[submodule "AudioFilter"]
+	path = AudioFilter
+	url = https://github.com/inferiorsound/AudioFilter.git
+[submodule "juce"]
+	path = juce
+	url = https://github.com/juce-framework/JUCE.git

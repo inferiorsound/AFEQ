@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="Oouryd" name="AFEQ" projectType="audioplug" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" pluginFormats="buildAU,buildVST3"
+              companyName="Inferior Sound" companyWebsite="www.inferiorsound.de"
+              pluginVST3Category="EQ">
+  <MAINGROUP id="coTsp7" name="AFEQ">
+    <GROUP id="{3E53BAF0-DCE3-7289-B0C8-8C615409758B}" name="Source">
+      <GROUP id="{2A83E98E-B210-014D-42AF-10C8159CED7B}" name="dsp">
+        <GROUP id="{4E468CB0-A155-DADF-94DA-B9EFBF7E1F8A}" name="AudioFilter">
+          <FILE id="FxbzC7" name="AudioFilterTypes.h" compile="0" resource="0"
+                file="AudioFilter/src/AudioFilterTypes.h"/>
+          <FILE id="D2j1EG" name="ButterworthCreator.cpp" compile="1" resource="0"
+                file="AudioFilter/src/ButterworthCreator.cpp"/>
+          <FILE id="UarpNZ" name="ButterworthCreator.h" compile="0" resource="0"
+                file="AudioFilter/src/ButterworthCreator.h"/>
+          <FILE id="jyUkab" name="FilterInstance.h" compile="0" resource="0"
+                file="AudioFilter/src/FilterInstance.h"/>
+          <FILE id="rh1huG" name="ParametricCreator.cpp" compile="1" resource="0"
+                file="AudioFilter/src/ParametricCreator.cpp"/>
+          <FILE id="SZfMIf" name="ParametricCreator.h" compile="0" resource="0"
+                file="AudioFilter/src/ParametricCreator.h"/>
+          <FILE id="FJoweH" name="Response.cpp" compile="1" resource="0" file="AudioFilter/src/Response.cpp"/>
+          <FILE id="i0Mq78" name="Response.h" compile="0" resource="0" file="AudioFilter/src/Response.h"/>
+        </GROUP>
+        <FILE id="XRSi0E" name="EqBandDsp.cpp" compile="1" resource="0" file="Source/dsp/EqBandDsp.cpp"/>
+        <FILE id="mwjbuH" name="EqBandDsp.h" compile="0" resource="0" file="Source/dsp/EqBandDsp.h"/>
+        <FILE id="GeNaua" name="FFTAnalyser.cpp" compile="1" resource="0" file="Source/dsp/FFTAnalyser.cpp"/>
+        <FILE id="TxqFAK" name="FFTAnalyser.h" compile="0" resource="0" file="Source/dsp/FFTAnalyser.h"/>
+      </GROUP>
+      <GROUP id="{3F0BB798-DE97-7E8C-6334-2FFCBB7AA5CE}" name="ui">
+        <FILE id="CXaV0H" name="afeq_logo.png" compile="0" resource="1" file="res/afeq_logo.png"/>
+        <FILE id="l39VpB" name="AFEQLookAndFeel.cpp" compile="1" resource="0"
+              file="Source/ui/AFEQLookAndFeel.cpp"/>
+        <FILE id="dXBn26" name="AFEQLookAndFeel.h" compile="0" resource="0"
+              file="Source/ui/AFEQLookAndFeel.h"/>
+        <FILE id="PVKA02" name="EQBand.h" compile="0" resource="0" file="Source/ui/EQBand.h"/>
+        <FILE id="MnvRpw" name="EQView.cpp" compile="1" resource="0" file="Source/ui/EQView.cpp"/>
+        <FILE id="x6i7ez" name="EQView.h" compile="0" resource="0" file="Source/ui/EQView.h"/>
+        <FILE id="eV4IIa" name="EQViewRange.h" compile="0" resource="0" file="Source/ui/EQViewRange.h"/>
+      </GROUP>
+      <FILE id="TZ1GgU" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="iEanWl" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+      <FILE id="wSHZww" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="qe9Haz" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <EXPORTFORMATS>
+    <VS2017 targetFolder="Builds/VisualStudio2017">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug"/>
+        <CONFIGURATION isDebug="0" name="Release"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_gui_extra" path="juce/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="juce/modules"/>
+        <MODULEPATH id="juce_graphics" path="juce/modules"/>
+        <MODULEPATH id="juce_events" path="juce/modules"/>
+        <MODULEPATH id="juce_data_structures" path="juce/modules"/>
+        <MODULEPATH id="juce_core" path="juce/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="juce/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="juce/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="juce/modules"/>
+        <MODULEPATH id="juce_dsp" path="juce/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="juce/modules"/>
+      </MODULEPATHS>
+    </VS2017>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="0"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+  </MODULES>
+  <LIVE_SETTINGS>
+    <WINDOWS/>
+  </LIVE_SETTINGS>
+</JUCERPROJECT>
