@@ -33,7 +33,6 @@ void EQView::resized()
     const auto h = getHeight();
     viewRange.width = w;
     viewRange.height = h;
-    const auto bw = 2.f * static_cast<int> (3 * viewRange.scale);
 }
 
 void EQView::paint(juce::Graphics& g)
@@ -46,7 +45,6 @@ void EQView::paint(juce::Graphics& g)
     const auto colResM = findColour(AFEQLookAndFeel::responseColourMid);
     const auto colResS = findColour(AFEQLookAndFeel::responseColourSide);
     
-    const auto w = getWidth();
     const auto h = getHeight();
 
     const auto& frb = bands[0]->getDsp().getFreqResBase();

@@ -27,7 +27,7 @@ public:
 
     //==============================================================================
     juce::Font getTextButtonFont(juce::TextButton&, int buttonHeight) override;
-    void AFEQLookAndFeel::drawButtonBackground(juce::Graphics& g, juce::Button& button, const juce::Colour& backgroundColour, bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown) override;
+    void drawButtonBackground(juce::Graphics& g, juce::Button& button, const juce::Colour& backgroundColour, bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown) override;
 
     //==============================================================================
     void drawRotarySlider(juce::Graphics&, int x, int y, int width, int height,
