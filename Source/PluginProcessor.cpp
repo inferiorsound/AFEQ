@@ -41,17 +41,17 @@ juce::AudioProcessorValueTreeState::ParameterLayout AFEQAudioProcessor::getLayou
         auto& bp = eqBand->getBandParams();
         bp.setBandId("Band " + juce::String(i + 1));
         auto grp = std::make_unique<juce::AudioProcessorParameterGroup>("band"+juce::String(i), bp.getBandId(), "|");
-        grp->addChild(std::make_unique<juce::AudioParameterBool> (bp.enableId.toString(), bp.enableId.toString(), false));
-        grp->addChild(std::make_unique<juce::AudioParameterChoice>(bp.typeId.toString(), bp.typeId.toString(), types, 0));
-        grp->addChild(std::make_unique<juce::AudioParameterChoice>(bp.routingId.toString(), bp.routingId.toString(), routings, 0));
-        grp->addChild(std::make_unique<juce::AudioParameterFloat>(bp.freqId.toString(), bp.freqId.toString(),
+        grp->addChild(std::make_unique<juce::AudioParameterBool> (juce::ParameterID(bp.enableId.toString(), 1), bp.enableId.toString(), false));
+        grp->addChild(std::make_unique<juce::AudioParameterChoice>(juce::ParameterID(bp.typeId.toString(), 1), bp.typeId.toString(), types, 0));
+        grp->addChild(std::make_unique<juce::AudioParameterChoice>(juce::ParameterID(bp.routingId.toString(), 1), bp.routingId.toString(), routings, 0));
+        grp->addChild(std::make_unique<juce::AudioParameterFloat>(juce::ParameterID(bp.freqId.toString(), 1), bp.freqId.toString(),
             freqRange, 1000.f, "Hz", juce::AudioProcessorParameter::genericParameter, freqToStr, strToFreq));
-        grp->addChild(std::make_unique<juce::AudioParameterFloat> (bp.gainId.toString(), bp.gainId.toString(),
+        grp->addChild(std::make_unique<juce::AudioParameterFloat> (juce::ParameterID(bp.gainId.toString(), 1), bp.gainId.toString(),
             gainRange, 0.f, "dB"));
-        grp->addChild(std::make_unique<juce::AudioParameterFloat>(bp.qId.toString(), bp.qId.toString(),
+        grp->addChild(std::make_unique<juce::AudioParameterFloat>(juce::ParameterID(bp.qId.toString(), 1), bp.qId.toString(),
             qRange, 0.707f, "", juce::AudioProcessorParameter::genericParameter, 
             [](float v, int) { return juce::String(v, 3); }));
-        grp->addChild(std::make_unique<juce::AudioParameterInt>(bp.orderId.toString(), bp.orderId.toString(),
+        grp->addChild(std::make_unique<juce::AudioParameterInt>(juce::ParameterID(bp.orderId.toString(), 1), bp.orderId.toString(),
             1, AFEQAudioProcessor::maxOrder, 2, "db/Oct",
             [](int v, int) { return juce::String(6 * v); },
             [](const juce::String& s) { return juce::jlimit(1, AFEQAudioProcessor::maxOrder, s.getIntValue() / 6); }));
